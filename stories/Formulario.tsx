@@ -1,15 +1,24 @@
 import React from "react";
+import './formulario.css';
 
-const Formulario = () => {
+interface FormularioProps {
+  labelCity: string;
+  labelCountry: string;
+}
+
+export const Formulario = ({
+  labelCity,
+  labelCountry
+  }: FormularioProps) => {
   return (
     <form>
       <div>
-        <label htmlFor="ciudad">Ciudad:</label>
+        <label htmlFor="ciudad">{labelCity}:</label>
         <input type="text" name="ciudad" id="ciudad" />
       </div>
 
       <div>
-        <label htmlFor="pais">País:</label>
+        <label htmlFor="pais">{labelCountry}:</label>
         <select name="pais" id="pais">
           <option value="">--Seleccione un país--</option>
           <option value="US">Estados Unidos</option>
@@ -24,5 +33,3 @@ const Formulario = () => {
     </form>
   );
 };
-
-export default Formulario;
