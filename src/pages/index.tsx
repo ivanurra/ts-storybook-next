@@ -2,15 +2,19 @@ import styles from "../styles/Home.module.css";
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Formulario from "../components/Formulario";
+import Clima from "../components/Clima";
 
 export default function Home() {
 
+  // STATE
   const [busqueda, guardarBusqueda] = useState({
     ciudad: "",
     pais: "",
   });
 
   const [consultar, guardarConsultar] = useState(false);
+
+  const [resultado, guardarResultado] = useState({});
 
   const {ciudad, pais} = busqueda;
 
@@ -28,7 +32,8 @@ export default function Home() {
   
         const resultado = await respuesta.json();
   
-        console.log(resultado);
+        guardarResultado(resultado);
+        guardarConsultar(false);
       }
     }
     consultarAPI();
@@ -41,6 +46,9 @@ export default function Home() {
         busqueda={busqueda}
         guardarBusqueda={guardarBusqueda}
         guardarConsultar={guardarConsultar}
+      />
+      <Clima
+        resultado={resultado}
       />
     </div>
   );
