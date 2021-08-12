@@ -1,22 +1,38 @@
 import React, { useState } from "react";
 
 const Formulario = () => {
+  
   const [busqueda, guardarBusqueda] = useState({
     ciudad: "",
     pais: "",
   });
 
+  const [error, guardarError] = useState(false);
+
   const { ciudad, pais } = busqueda;
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     guardarBusqueda({
       ...busqueda,
       [e.target.name]: e.target.value,
     });
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    if(ciudad.trim() === '' || pais.trim() === ''){
+      guardarError(true);
+      return;
+    }
+    guardarError(false);
+  };
+
   return (
-    <form>
+    <form
+      onSubmit={handleSubmit}
+    >
+      { error ? <p>Debes completar todos los campos.</p> : null }
       <div>
         <label htmlFor="ciudad">Ciudad:</label>
         <input
@@ -45,6 +61,12 @@ const Formulario = () => {
           <option value="ES">España</option>
           <option value="PE">Perú</option>
         </select>
+      </div>
+      <div>
+        <input 
+          type="submit"
+          value="BUSCAR"
+        />
       </div>
     </form>
   );
