@@ -2,6 +2,8 @@
 
 This is a [Next.js](https://nextjs.org/) sample project with [TypeScript](https://www.typescriptlang.org/) and [Storybook](https://storybook.js.org/).
 
+API: [OpenWeather] (https://openweathermap.org/api)
+
 ## Getting Started
 
 First, run the development server:
