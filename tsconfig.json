@@ -14,6 +14,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "stories/Formulario.stories.tsx", "stories/Formulario.stories.tsx"],
   "exclude": ["node_modules"]
 }

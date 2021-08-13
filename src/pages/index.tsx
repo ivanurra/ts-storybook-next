@@ -6,6 +6,7 @@ import Clima from "../components/Clima";
 import Error from "../components/Error";
 
 export default function Home() {
+  
   // STATE
   const [busqueda, guardarBusqueda] = useState({
     ciudad: "",
@@ -18,6 +19,7 @@ export default function Home() {
 
   const [error, guardarError] = useState(false);
 
+  // Destruct.
   const { ciudad, pais } = busqueda;
 
   // API KEY - SIGN UP TO USE THE API: https://openweathermap.org/api

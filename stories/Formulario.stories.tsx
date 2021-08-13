@@ -1,6 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { Formulario } from './Formulario';
+import Formulario from '../src/components/Formulario';
+import './formulario.css'
 
 export default {
   title: 'Formulario',
