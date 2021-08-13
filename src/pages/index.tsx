@@ -61,6 +61,8 @@ export default function Home() {
         busqueda={busqueda}
         guardarBusqueda={guardarBusqueda}
         guardarConsultar={guardarConsultar}
+        labelCity='Ciudad'
+        labelCountry='País'
       />
       {componente}
     </div>
