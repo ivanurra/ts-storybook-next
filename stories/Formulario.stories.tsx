@@ -13,5 +13,9 @@ const Template: Story<typeof Formulario> = (args) => <Formulario {...args} />;
 export const Search = Template.bind({});
 Search.args = {
     labelCity: 'Ciudad',
-    labelCountry: 'País'
+    labelCountry: 'País',
+    busqueda: {
+      ciudad: 'Madrid',
+      pais: 'España'
+    }
 };
